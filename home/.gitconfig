@@ -1,0 +1,34 @@
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%C(green)%h%Creset %C(black)%cr%Creset %s %C(auto)%d%Creset %C(blue)%an%Creset\" --graph
+    type = cat-file -t
+    dump = cat-file -p
+	up = "!git remote update -p; git merge --ff-only @{u}"
+    go = checkout
+
+[push]
+	default = current
+[user]
+	name = Jack Makiyama
+	email = jack@phpbr.org
+[color]
+    ui = true
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = green
+    local = blue bold
+    remote = blue
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan

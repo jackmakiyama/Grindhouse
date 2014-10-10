@@ -1,0 +1,71 @@
+" ~/.vimrc
+"
+" @author Jack Makiyama
+"         based on Augusto Pascutti warwick
+
+" Globals
+"
+filetype indent plugin on
+syn on
+set number          " show line numbers (gutter-like)
+set ts=4            " tab stop
+set et              " expand tabs
+retab               " converts existing tabs
+set ruler           " shows ruler
+set cursorline      " highlugh current line
+set hlsearch
+
+filetype off
+filetype indent on
+
+" Pathogen
+"
+execute pathogen#infect()
+
+" Airline
+"
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+
+" Color scheme options
+"
+set background=dark
+set t_Co=256
+colorscheme solarized
+
+" NERDTree
+"
+" autocmd vimenter * NERDTree
+
+" NERDTreeTabs Toggle
+"
+map <C-n> :NERDTreeTabsToggle<CR>
+
+" phpcomplete
+"
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+inoremap <Nul> <C-x><C-o> " Remap code completion to Ctrl+Space {{{2
+
+" mark trailing whitespaces
+"
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" PHPClassExplorer
+"
+map <C-e> :PHPClassExplorer<CR>x
+
+" Map keys
+"
+nmap <C-d> mzyyp`z
+map <C-q> :qall<CR>
+
+" GitGutter
+"
+highlight clear SignColumn
+
