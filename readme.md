@@ -1,6 +1,6 @@
 # Grindhouse
 
-My [homesick][] clastle.
+My [homesick][] castle.
 
 [homesick]: https://github.com/technicalpickles/homesick
 
