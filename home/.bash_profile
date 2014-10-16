@@ -1,5 +1,6 @@
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ls="ls -G"
+alias rc='/Users/jackmakiyama/Development/RC/rc'
 
 git_parse_dirty()
 {

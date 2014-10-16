@@ -36,4 +36,7 @@
 	url = https://github.com/jistr/vim-nerdtree-tabs
 [submodule "home/.vim/bundle/vim-twig"]
 	path = home/.vim/bundle/vim-twig
-	url = https://github.com/evidens/vim-twig
+    url = https://github.com/evidens/vim-twig
+[submodule "home/.vim/bundle/nerdcommenter"]
+	path = home/.vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
