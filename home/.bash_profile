@@ -22,3 +22,7 @@ PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
 
 # charger tmux airline
 vim +qall
+
+# PHP 5.6
+export PATH=/usr/local/php5/bin:$PATH
+

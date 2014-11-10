@@ -44,6 +44,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'terryma/vim-multiple-cursors'
 
 
 " Include user's extra bundle
@@ -93,6 +94,11 @@ colorscheme solarized
 "
 map <C-n> :NERDTreeTabsToggle<CR>
 
+" NERDCommenter
+"
+map <C-/> <leader>c <CR>
+
+
 " phpcomplete
 "
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
@@ -119,4 +125,6 @@ nmap <C-d> mzyyp`z
 " GitGutter
 "
 highlight clear SignColumn
+
+:set colorcolumn=80,120
 
