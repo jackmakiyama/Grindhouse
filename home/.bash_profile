@@ -26,3 +26,6 @@ vim +qall
 # PHP 5.6
 export PATH=/usr/local/php5/bin:$PATH
 
+# Composer Global
+export PATH=~/.composer/vendor/bin:$PATH
+

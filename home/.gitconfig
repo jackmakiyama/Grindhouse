@@ -32,3 +32,5 @@
     added = green
     changed = yellow
     untracked = cyan
+[pull]
+	default = current

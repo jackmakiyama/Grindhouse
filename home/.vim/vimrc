@@ -126,5 +126,6 @@ nmap <C-d> mzyyp`z
 "
 highlight clear SignColumn
 
-:set colorcolumn=80,120
-
+" Column Limit
+"
+let &colorcolumn="80,".join(range(120,999),",")
