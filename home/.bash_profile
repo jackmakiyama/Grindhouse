@@ -1,6 +1,7 @@
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ls="ls -G"
 alias rc='/Users/jackmakiyama/Development/RC/rc'
+alias 'git-phpcs'='phpcs --standard=PSR2 $(git diff --name-only origin/master)'
 
 git_parse_dirty()
 {
