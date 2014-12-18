@@ -34,7 +34,6 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nelsonsar/phpclassexplorer'
 NeoBundle 'shawncplus/phpcomplete.vim'
-NeoBundle 'mkitt/tabline.vim'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -45,7 +44,6 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
-
 
 " Include user's extra bundle
 "
@@ -64,7 +62,9 @@ NeoBundleCheck
 filetype indent plugin on
 syn on
 set number          " show line numbers (gutter-like)
+set smartindent
 set ts=4            " tab stop
+set shiftwidth=4
 set et              " expand tabs
 retab               " converts existing tabs
 set ruler           " shows ruler
@@ -78,7 +78,7 @@ filetype indent on
 "
 set laststatus=2
 let g:airline_powerline_fonts = 1
-
+let g:airline#extensions#tabline#enabled = 1
 
 " Color scheme options
 "
@@ -89,10 +89,13 @@ colorscheme solarized
 " NERDTree
 "
 " autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let g:NERDTreeChDirMode = 2
 
 " NERDTreeTabs Toggle
 "
-map <C-n> :NERDTreeTabsToggle<CR>
+map <S-n> :NERDTreeTabsToggle<CR>
 
 " NERDCommenter
 "
@@ -102,7 +105,7 @@ map <C-/> <leader>c <CR>
 " phpcomplete
 "
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-inoremap <Nul> <C-x><C-o> " Remap code completion to Ctrl+Space {{{2
+inoremap <Nul> <C-x><C-o>
 
 " mark trailing whitespaces
 "
