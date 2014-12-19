@@ -79,6 +79,7 @@ filetype indent on
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Color scheme options
 "
@@ -132,3 +133,27 @@ highlight clear SignColumn
 " Column Limit
 "
 let &colorcolumn="80,".join(range(120,999),",")
+
+" tab navigation like firefox
+nnoremap <leader>p :bprevious<CR>
+nnoremap <leader>n :bNext<CR>
+nnoremap <leader>t :enew<CR>
+inoremap <leader>p <Esc>:bprevious<CR>i
+inoremap <leader>n <Esc>:bNext<CR>i
+inoremap <leader>t <Esc>:enew<CR>
+
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+
+" Use the nearest .git directory as the cwd
+" This makes a lot of sense if you are working on a project that is in version
+" control. It also supports works with .svn, .hg, .bzr.
+let g:ctrlp_working_path_mode = 'r'
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap <leader>bs :CtrlPMRU<cr>
