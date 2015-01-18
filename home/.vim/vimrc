@@ -33,7 +33,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nelsonsar/phpclassexplorer'
-NeoBundle 'shawncplus/phpcomplete.vim'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -70,7 +69,7 @@ retab               " converts existing tabs
 set ruler           " shows ruler
 set cursorline      " highlugh current line
 set hlsearch
-
+set backspace=indent,eol,start
 filetype off
 filetype indent on
 
@@ -89,7 +88,6 @@ colorscheme solarized
 
 " NERDTree
 "
-" autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let g:NERDTreeChDirMode = 2
@@ -101,12 +99,6 @@ map <S-n> :NERDTreeTabsToggle<CR>
 " NERDCommenter
 "
 map <C-/> <leader>c <CR>
-
-
-" phpcomplete
-"
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-inoremap <Nul> <C-x><C-o>
 
 " mark trailing whitespaces
 "
@@ -124,7 +116,6 @@ map <C-e> :PHPClassExplorer<CR>x
 " Map keys
 "
 nmap <C-d> mzyyp`z
-"map <C-q> :qall<CR>
 
 " GitGutter
 "
@@ -135,12 +126,11 @@ highlight clear SignColumn
 let &colorcolumn="80,".join(range(120,999),",")
 
 " tab navigation like firefox
-nnoremap <leader>p :bprevious<CR>
-nnoremap <leader>n :bNext<CR>
-nnoremap <leader>t :enew<CR>
-inoremap <leader>p <Esc>:bprevious<CR>i
-inoremap <leader>n <Esc>:bNext<CR>i
-inoremap <leader>t <Esc>:enew<CR>
+map <C-b> :bprevious<CR>
+map <C-g> :bnext<CR>
+map <C-t> :enew<CR>
+map <C-w> :bp<CR>
+map <S-q> :q<CR>
 
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
