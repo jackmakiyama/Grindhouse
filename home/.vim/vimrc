@@ -86,19 +86,13 @@ set background=dark
 set t_Co=256
 colorscheme solarized
 
-" NERDTree
-"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:NERDTreeChDirMode = 2
-
 " NERDTreeTabs Toggle
 "
-map <S-n> :NERDTreeTabsToggle<CR>
+map <leader>t :NERDTreeTabsToggle<CR>
 
 " NERDCommenter
 "
-map <C-/> <leader>c <CR>
+map <leader>\ <leader>c <CR>
 
 " mark trailing whitespaces
 "
@@ -111,13 +105,9 @@ autocmd BufWinLeave * call clearmatches()
 
 " PHPClassExplorer
 "
-map <C-e> :PHPClassExplorer<CR>x
+map <leader>e :PHPClassExplorer<CR>x
 
-" Map keys
-"
-nmap <C-d> mzyyp`z
-
-" GitGutter
+" GitGutteR
 "
 highlight clear SignColumn
 
@@ -125,25 +115,3 @@ highlight clear SignColumn
 "
 let &colorcolumn="80,".join(range(120,999),",")
 
-" tab navigation like firefox
-map <C-b> :bprevious<CR>
-map <C-g> :bnext<CR>
-map <C-t> :enew<CR>
-map <C-w> :bp<CR>
-map <S-q> :q<CR>
-
-" Setup some default ignores
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-    \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
-\}
-
-" Use the nearest .git directory as the cwd
-" This makes a lot of sense if you are working on a project that is in version
-" control. It also supports works with .svn, .hg, .bzr.
-let g:ctrlp_working_path_mode = 'r'
-
-" Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
