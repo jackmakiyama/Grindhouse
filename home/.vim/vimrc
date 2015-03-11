@@ -31,7 +31,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "" NeoBundle install packages
 "
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'scrooloose/nerdtree'
+"NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nelsonsar/phpclassexplorer'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'bling/vim-airline'
@@ -39,7 +39,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'elzr/vim-json'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+"NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
@@ -86,10 +86,6 @@ set background=dark
 set t_Co=256
 colorscheme solarized
 
-" NERDTreeTabs Toggle
-"
-map <leader>t :NERDTreeTabsToggle<CR>
-
 " NERDCommenter
 "
 map <leader>\ <leader>c <CR>
@@ -114,4 +110,9 @@ highlight clear SignColumn
 " Column Limit
 "
 let &colorcolumn="80,".join(range(120,999),",")
+
+" netrw
+"
+let g:netrw_liststyle=3
+let g:netrw_banner=0
 
