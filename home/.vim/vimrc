@@ -31,7 +31,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "" NeoBundle install packages
 "
 NeoBundle 'kien/ctrlp.vim'
-"NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'nelsonsar/phpclassexplorer'
 NeoBundle 'edkolev/tmuxline.vim'
 NeoBundle 'bling/vim-airline'
@@ -39,10 +38,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'elzr/vim-json'
-"NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'mattn/emmet-vim'
 
 " Include user's extra bundle
 "
@@ -98,10 +97,11 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre * :%s/\s\+$//e
 
 " PHPClassExplorer
 "
-map <leader>e :PHPClassExplorer<CR>x
+autocmd FileType php map <leader>e :PHPClassExplorer<CR>x
 
 " GitGutteR
 "

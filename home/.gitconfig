@@ -6,14 +6,15 @@
     hist = log --pretty=format:\"%C(green)%h%Creset %C(black)%cr%Creset %s %C(auto)%d%Creset %C(blue)%an%Creset\" --graph
     type = cat-file -t
     dump = cat-file -p
-	up = "!git remote update -p; git merge --ff-only @{u}"
+    up = "!git remote update -p; git merge --ff-only @{u}"
     go = checkout
+    rci = !git commit -m \"`curl -s http://whatthecommit.com/index.txt`\"
 
 [push]
-	default = current
+    default = current
 [user]
-	name = Jack Makiyama
-	email = jack@phpbr.org
+    name = Jack Makiyama
+    email = jack@phpbr.org
 [color]
     ui = true
     branch = auto
@@ -33,8 +34,10 @@
     changed = yellow
     untracked = cyan
 [pull]
-	default = current
+    default = current
 [core]
-	editor = /usr/bin/vim
-	autocrlf = true
-	whitespace = cr-at-eol
+    editor = /usr/bin/vim
+    autocrlf = input
+    whitespace = cr-at-eol
+    safecrlf = true
+
