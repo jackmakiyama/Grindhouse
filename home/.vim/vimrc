@@ -58,9 +58,12 @@ NeoBundleCheck
 " Globals
 "
 filetype indent plugin on
+filetype off
+filetype indent on
 syn on
 set number          " show line numbers (gutter-like)
 set smartindent
+set ff=unix
 set ts=4            " tab stop
 set shiftwidth=4
 set et              " expand tabs
@@ -69,8 +72,6 @@ set ruler           " shows ruler
 set cursorline      " highlugh current line
 set hlsearch
 set backspace=indent,eol,start
-filetype off
-filetype indent on
 
 " Airline
 "
@@ -83,6 +84,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "
 set background=dark
 set t_Co=256
+"let g:solarized_termcolors=256
 colorscheme solarized
 
 " NERDCommenter
