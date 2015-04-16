@@ -42,6 +42,7 @@ NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'wakatime/vim-wakatime'
 
 " Include user's extra bundle
 "
@@ -117,4 +118,7 @@ let &colorcolumn="80,".join(range(120,999),",")
 "
 let g:netrw_liststyle=3
 let g:netrw_banner=0
+map <leader>t :Vex<CR>
+
+map <leader>/ :noh<CR>
 

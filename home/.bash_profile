@@ -1,7 +1,9 @@
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 alias ls="ls -G"
 alias rc='/Users/jackmakiyama/Development/RC/rc'
-alias 'git-phpcs'='phpcs --standard=PSR2 $(git diff --name-only origin/master)'
+alias 'git-phpcs'='phpcs --standard=PSR2 $(git diff --name-only origin/master --diff-filter=ACMRTUXB | grep .php)'
+alias 'git-phpcbf'='phpcbf --standard=PSR2 --no-patch $(git diff --name-only origin/master --diff-filter=ACMRTUXB | grep .php)'
+alias dos2unixfix='find . -type f -exec dos2unix {} \;'
 
 git_parse_dirty()
 {
@@ -21,12 +23,16 @@ export PS1
 
 PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
 
-# charger tmux airline
+# charger tmuxline
 vim +qall
 
 # PHP 5.6
-export PATH=/usr/local/php5/bin:$PATH
+#export PATH=/usr/local/php5/bin:$PATH
 
 # Composer Global
 export PATH=~/.composer/vendor/bin:$PATH
 
+set -o vi
+bind -m vi-insert "\C-l":clear-screen
+
+clear
