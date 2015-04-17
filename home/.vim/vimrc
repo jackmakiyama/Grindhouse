@@ -43,6 +43,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'scrooloose/syntastic'
 
 " Include user's extra bundle
 "
@@ -85,7 +86,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "
 set background=dark
 set t_Co=256
-"let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 colorscheme solarized
 
 " NERDCommenter
@@ -121,4 +122,11 @@ let g:netrw_banner=0
 map <leader>t :Vex<CR>
 
 map <leader>/ :noh<CR>
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
