@@ -40,10 +40,13 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'scrooloose/syntastic'
+NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'takac/vim-hardtime'
 
 " Include user's extra bundle
 "
@@ -93,6 +96,10 @@ colorscheme solarized
 "
 map <leader>\ <leader>c <CR>
 
+" NERDTree
+"
+map <leader>t :NERDTreeToggle<CR>
+
 " mark trailing whitespaces
 "
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -101,7 +108,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " PHPClassExplorer
 "
@@ -119,14 +126,21 @@ let &colorcolumn="80,".join(range(120,999),",")
 "
 let g:netrw_liststyle=3
 let g:netrw_banner=0
-map <leader>t :Vex<CR>
+map <leader>e :Vex<CR>
 
+" Clear Searches
+"
 map <leader>/ :noh<CR>
 
+" Syntastic
+"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+
+" Hardtime
+"
+let g:hardtime_default_on = 1
 
