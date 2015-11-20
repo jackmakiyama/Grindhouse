@@ -47,6 +47,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'StanAngeloff/php.vim'
 NeoBundle 'takac/vim-hardtime'
+NeoBundle 'shawncplus/phpcomplete.vim'
 
 " Include user's extra bundle
 "
@@ -108,7 +109,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-"autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " PHPClassExplorer
 "
@@ -139,8 +140,13 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
 
 " Hardtime
 "
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 
+" Switch to alternate file
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
