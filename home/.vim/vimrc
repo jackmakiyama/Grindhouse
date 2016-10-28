@@ -40,14 +40,18 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'evidens/vim-twig'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'wakatime/vim-wakatime'
+" NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'takac/vim-hardtime'
+"NeoBundle 'takac/vim-hardtime'
 NeoBundle 'shawncplus/phpcomplete.vim'
+"NeoBundle 'phpfmt/vim-phpfmt'
+NeoBundle 'captbaritone/better-indent-support-for-php-with-html'
+NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+NeoBundle 'ryanoasis/vim-devicons'
 
 " Include user's extra bundle
 "
@@ -78,6 +82,8 @@ set ruler           " shows ruler
 set cursorline      " highlugh current line
 set hlsearch
 set backspace=indent,eol,start
+set encoding=utf8
+
 
 " Airline
 "
@@ -110,6 +116,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd FileType php autocmd BufWritePre * :%s/\t/    /e
 
 " PHPClassExplorer
 "
@@ -138,8 +145,8 @@ map <leader>/ :noh<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
 
 " Hardtime
@@ -150,3 +157,15 @@ let g:syntastic_php_phpcs_args="--standard=PSR2 -n --report=csv"
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+" phpfmt
+"let g:phpfmt_on_save = get(g:, 'phpfmt_on_save', 1) " format on save (autocmd)
+"let g:phpfmt_php_path = "php"               " Path to PHP
+"let g:phpfmt_standard = 'PSR2'
+"let g:phpfmt_autosave = 0
+
+" nerdtree-syntax-highlight
+"
+"let g:NERDTreeDisableFileExtensionHighlight = 1
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
+
